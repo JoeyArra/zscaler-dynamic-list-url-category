@@ -58,13 +58,13 @@ This script automates the process of updating a Zscaler custom URL category from
     ```
 
 3.  **Automate with Cron (Example):**
-    To run the script automatically every hour, you can add an entry to your host machine's crontab.
+    To run the script automatically, you can add an entry to your host machine's crontab. This example runs the sync every 15 minutes and saves the output to a log file in your home directory.
 
-    First, run `crontab -e`. Then, add the following line, making sure to use the absolute path to your project directory:
+    First, run crontab -e. Then, add the following line, making sure to replace /path/to/your/project with the absolute path to where you cloned the repository:
 
     ```cron
-    # Run the Zscaler sync script every hour
-    0 * * * * cd /path/to/your/project && /usr/bin/docker-compose exec app python3 multi-url-category-sync.py >> /var/log/zscaler-sync.log 2>&1
+    # Run the Zscaler sync script every 15 minutes
+    */15 * * * * cd /path/to/your/project && /usr/bin/docker-compose exec app python3 /app/multi-url-category-sync.py >> ~/zscaler-sync.log 2>&1
     ```
 
 ---
