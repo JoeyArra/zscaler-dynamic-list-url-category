@@ -64,7 +64,7 @@ This script automates the process of updating a Zscaler custom URL category from
 
     ```cron
     # Run the Zscaler sync script every 15 minutes
-    */15 * * * * cd /path/to/your/project && /usr/bin/docker-compose exec app python3 /app/multi-url-category-sync.py >> ~/zscaler-sync.log 2>&1
+    */15 * * * * cd /path/to/your/project && /usr/bin/docker-compose exec -T app python3 /app/multi-url-category-sync.py >> ~/zscaler-sync.log 2>&1
     ```
 
 ---
